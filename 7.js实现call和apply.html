@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        Function.prototype.mycall=function(obj){
+            obj=obj||window;
+            obj.fn=this;
+            let result;
+            let args=[];
+            for(let i=1,len=arguments.length;i<len;i++){
+                args.push('arguments['+i+']');
+            }
+            
+            result=eval('obj.fn('+args+')');
+            delete obj.fn;
+            return result;
+        }
+
+        Function.prototype.myapply=function(obj,arr){
+            obj=obj||window;
+            obj.fn=this;
+            let result;
+            if(!arr){
+                result=obj.fn();
+            }else{
+                let args=[];
+                for(let i=0,len=arr.length;i<len;i++){
+                    args.push('arguments['+i+']');
+                }
+                result=eval('obj.fn('+args+')');
+            }
+            delete obj.fn;
+            return result;
+
+        }
+    </script>
+</body>
+</html>

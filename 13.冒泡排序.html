@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function maopaosort(ele){
+            for(let i=0;i<ele.length-1;i++){
+                for(let j=0;j<ele.length-i-1;j++){
+                    if(ele[j]>ele[j+1]){
+                        let temp=ele[j];
+                        ele[j]=ele[j+1];
+                        ele[j+1]=temp;
+                    }
+                }
+            }
+        }
+        let arr=[3,1,5,4,9,10,3,6];
+        maopaosort(arr);
+        console.log(arr);
+    </script>
+</body>
+</html>

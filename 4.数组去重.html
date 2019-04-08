@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    
+</head>
+<body>
+
+<script>
+   
+function fn2(name,age){
+    this.name=name;
+    this.age=age;
+}
+    var p1={};
+    fn2.call(p1,"张三",20);
+    fn2.apply(p1,["张三",20]);
+
+   var f=(function fn(){
+       var name=1;
+       return function(){
+           name++;
+           console.log(name);
+       }
+   })();
+   f();
+   var foo = 1;
+   function a(){
+       console.log(foo);
+       var foo = 2;
+       console.log(foo);
+       console.log(Math.random());
+   }
+   a();
+</script>
+</body>
+</html>

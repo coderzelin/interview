@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .div{
+        border-style: solid;
+        border-width: 100px 100px 0px 100px;
+        border-color: red transparent transparent transparent;
+        height: 0px;
+        width: 0px;
+    }
+</style>
+<body>
+    <div class="div"></div>
+    <script>
+        var json1 = {
+            "a": "name",
+            "arr1": [1, 2, 3]
+        }
+
+        function copy(obj1) {
+            var obj2 = {};
+            for (var i in obj1) {
+                obj2[i] = obj1[i];
+            }
+            return obj2;
+        }
+        var json2 = copy(json1);
+        json1.arr1.push(4);
+        alert(json1.arr1); //1234
+        alert(json2.arr1) //1234
+    </script>
+    
+</body>
+
+</html>

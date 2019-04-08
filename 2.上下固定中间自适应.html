@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>layout</title>
+    <style>
+        .layout1 div{
+            width: 100%;
+            position: absolute;
+        }
+        .layout1 .head{
+            top: 0;
+            height: 100px;
+            background: red;
+        }
+        .layout1 .foot{
+            bottom: 0;
+            height: 100px;
+            background: blue;
+        }
+        .layout1 .container{
+            top: 100px;
+            bottom: 100px;
+            background: yellow;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <article class="layout1">
+        <div class="head"></div>
+        <div class="container">
+            <h2>中间部分</h2>
+        </div>
+        <div class="foot"></div>
+    </article>
+</section>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //JSON实现深拷贝
+        //但这种方法的缺陷是会破坏原型链，并且无法拷贝属性值为function的属性
+        function deepClone(obj){
+            let _obj=JSON.stringify(obj);
+            let objClone=JSON.parse(_obj);
+            return objClone;
+        }
+
+        //递归实现深拷贝
+        function deepClone(obj){
+            let result={};
+            for(let key in obj){
+                result[key]=typeof obj[key]==='object'?deepClone(obj[key]):obj[key];
+            }
+            return result;
+        }
+    </script>
+</body>
+</html>

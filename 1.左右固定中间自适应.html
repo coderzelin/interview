@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  *{
+    margin: 0;
+    padding: 0;
+   }
+    section{
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+   <!--float解决方案-->
+  <section class="layout1">
+    <style>
+      .layout1 div{
+        height: 100px;
+      }
+      .layout1 .left{
+        float: left;
+        width: 300px;
+        background: red;
+      }
+      .layout1 .right{
+        float: right;
+        width: 300px;
+        background: blue;
+      }
+      .layout1 .center{
+        background: yellow;
+      }
+
+    </style>
+    <article class="container">
+      <div class="left"></div>
+      <div class="right"></div>
+      <div class="center">
+        <h1>float布局</h1>
+        中间自适应
+      </div>
+    </article>
+  </section>
+
+   <!--绝对定位解决方案-->
+  <section class="layout2">
+    <style>
+      .layout2 div{
+        position: absolute;
+        height: 100px;
+      }
+      .layout2 .left{
+        width: 300px;
+        left: 0;
+        background:red;
+      }
+      .layout2 .center{
+        left: 300px;
+        right: 300px;
+        background: yellow;
+      }
+      .layout2 .right{
+        width: 300px;
+        background: blue;
+        right: 0;
+      }
+    </style>
+    <article class="container">
+      <div class="left"></div>
+      <div class="center">
+        <h1>absolute布局</h1>
+        中间自适应
+      </div>
+      <div class="right"></div>
+    </article>
+  </section>
+  
+  <!--flex布局解决方案-->
+  <section class="layout3">
+    <style>
+      .layout3 .container{
+        margin-top: 120px;
+        display: flex;
+      }
+      .layout3 .left{
+        height: 100px;
+        width: 300px;
+        background: red;
+      }
+      .layout3 .center{
+        flex: 1;
+        background: yellow;
+      }
+      .layout3 .right{
+        height: 100px;
+        width: 300px;
+        background: blue;
+      }
+    </style>
+    <article class="container">
+      <div class="left"></div>
+      <div class="center">
+        <h1>flex布局</h1>
+        中间自适应
+      </div>
+      <div class="right"></div>
+    </article>
+  </section>
+
+   <!--table布局解决方案-->
+  <section class="layout4">
+    <style>
+      .layout4 .container{
+        display: table;
+        width: 100%;
+      }
+      .layout4 div{
+        display: table-cell;
+        height: 100px;
+      }
+      .layout4 .left{
+        width: 300px;
+        background: red;
+      }
+      .layout4 .center{
+        background: yellow;
+      }
+      .layout4 .right{
+        width: 300px;
+        background: blue;
+      }
+    </style>
+    <article class="container">
+      <div class="left"></div>
+      <div class="center">
+        <h1>table布局</h1>
+        这是中间部分
+      </div>
+      <div class="right"></div>
+    </article>
+  </section>
+
+   <!--网格布局的解决方案-->
+  <section class="layout5">
+    <article class="container">
+      <style>
+        .layout5 .container{
+          display: grid;
+          width: 100%;
+          grid-template-rows: 100px;
+          grid-template-columns: 300px auto 300px;
+        }
+        .layout5 .left{
+          background: red;
+        }
+        .layout5 .center{
+          background: yellow;
+        }
+        .layout5 .right{
+          background: blue;
+
+        }
+      </style>
+      <div class="left"></div>
+      <div class="center">
+        <h1>网格布局</h1>
+        这是中间部分
+      </div>
+      <div class="right"></div>
+    </article>
+  </section>
+
+</body>
+</html>

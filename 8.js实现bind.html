@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        Function.prototype.mybind=function(newThis){
+            if(typeof this !=='function'){
+                return
+            }
+            let _self=this;
+            let args=Array.prototype.slice.apply(arguments,1);
+            let fnNop=function(){};
+            let fnBound=function(){
+                let _this=this instanceof _self?this:newThis;
+                return _self.apply(_this,args.concat(Array.prototype.slice.apply(arguments)));
+            }
+            if(this.prototype){
+                fnNop.prototype=this.prototype;
+            }
+            fnBound.prototype=new fnNop();
+            return fnBound;
+        }
+    </script>
+    
+</body>
+</html>
